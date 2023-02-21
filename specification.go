@@ -5,21 +5,21 @@ type Specification interface {
 }
 
 type BookSpecification struct {
-	book string
+	Book string
 }
 
 type ChapterSpecification struct {
-	chapter int
+	Chapter int
 }
 
 type BetterFilter struct{}
 
 func (b BookSpecification) IsSatisfied(v Verse) bool {
-	return v.Book == b.book
+	return v.Book == b.Book
 }
 
 func (c ChapterSpecification) IsSatisfied(v Verse) bool {
-	return v.Chapter == c.chapter
+	return v.Chapter == c.Chapter
 }
 
 func (f *BetterFilter) Filter(verses []Verse, spec Specification) []Verse {
